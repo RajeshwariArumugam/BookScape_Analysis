@@ -11,14 +11,14 @@ import random
 
 # Google Books API configuration
 API_URL = "https://www.googleapis.com/books/v1/volumes"
-API_KEY = "AIzaSyD4DEOE9JTYHR-MO9Wq0qHmDmyqi7l_VUM"
+API_KEY = "API_KEY"  #Replace it with your API Key
 
 # Database configuration
 db_config = {
-    "host": "localhost",
-    "user": "root",
-    "password": "789456123",
-    "database": "bookscape_explore"
+    "host": "localhost", #Replace it with your host_name
+    "user": "root",  #Repalce it with your user_name
+    "password": "Password",  #Replace it with your password
+    "database": "bookscape_explore"  #Replace it with your db_name
 }
 
 def connect_database():
