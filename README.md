@@ -18,3 +18,5 @@ The BookScape Explorer project aims to facilitate users in discovering and analy
 
 PREVIEW OF THE WEBSITE:
 
+
+![Screenshot 2025-01-05 191923](https://github.com/user-attachments/assets/826822d7-b0a0-49a5-9757-4b2b474dd995)
