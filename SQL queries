@@ -1,0 +1,21 @@
+######### SQL queries to answer questions #############
+Check Availability of eBooks vs Physical Books
+Find the Publisher with the Most Books Published
+Identify the Publisher with the Highest Average Rating
+Get the Top 5 Most Expensive Books by Retail Price
+Find Books Published After 2010 with at Least 500 Pages
+List Books with Discounts Greater than 20%
+Find the Average Page Count for eBooks vs Physical Books
+Find the Top 3 Authors with the Most Books
+List Publishers with More than 10 Books
+Find the Average Page Count for Each Category
+Retrieve Books with More than 3 Authors
+Books with Ratings Count Greater Than the Average
+Books with the Same Author Published in the Same Year
+Books with a Specific Keyword in the Title
+Year with the Highest Average Book Price
+Count Authors Who Published 3 Consecutive Years
+Write a SQL query to find authors who have published books in the same year but under different publishers. Return the authors, year, and the COUNT of books they published in that year.
+Create a query to find the average amount_retailPrice of eBooks and physical books. Return a single result set with columns for avg_ebook_price and avg_physical_price. Ensure to handle cases where either category may have no entries.
+Write a SQL query to identify books that have an averageRating that is more than two standard deviations away from the average rating of all books. Return the title, averageRating, and ratingsCount for these outliers.
+Create a SQL query that determines which publisher has the highest average rating among its books, but only for publishers that have published more than 10 books. Return the publisher, average_rating, and the number of books published.
