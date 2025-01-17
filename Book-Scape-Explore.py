@@ -6,6 +6,7 @@ import mysql.connector
 import json
 from time import sleep
 import streamlit as st
+import requests
 import pandas as pd
 import random
 
@@ -163,9 +164,6 @@ if __name__ == "__main__":
 
 # 2. Streamlit Application
 # Streamlit setup
-import streamlit as st
-import requests
-
 # Function to load Lottie animations
 def load_lottie_url(url: str):
     r = requests.get(url)
@@ -207,34 +205,6 @@ if choice == "Home":
 
     st.markdown("---")
     st.info("📖 **Tip:** Use the 'Explore!' tab to start your journey!")
-
-elif choice == "Search Books":
-    st.header("Search Books by Title, Author, or Publisher")
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        search_title = st.text_input("Search by Title")
-    with col2:
-        search_author = st.text_input("Search by Author")
-    with col3:
-        search_publisher = st.text_input("Search by Publisher")
-
-    # Query construction based on user input
-    query = "SELECT * FROM books WHERE 1=1"
-    if search_title:
-        query += f" AND book_title LIKE '%{search_title}%'"
-    if search_author:
-        query += f" AND book_authors LIKE '%{search_author}%'"
-    if search_publisher:
-        query += f" AND publisher LIKE '%{search_publisher}%'"
-
-    # Fetching data from the database based on the constructed query
-    books_df = pd.DataFrame(fetch_books_from_db(query))
-
-    if not books_df.empty:
-        st.dataframe(books_df)
-    else:
-        st.write("No books found.")
 
 elif choice == "Explore!":
     st.header("🔍 Search and Explore Books")
