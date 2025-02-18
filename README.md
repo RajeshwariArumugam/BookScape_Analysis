@@ -9,7 +9,7 @@ The BookScape Explorer project aims to facilitate users in discovering and analy
 - 🎨 Beautiful and responsive UI.
 
 
-## Credits
+## References
 - [Google Books API](https://developers.google.com/books) for data.
 - [Streamlit](https://streamlit.io/) for app development.
 - [Lottie Animations](https://lottiefiles.com/) for interactive visuals.
