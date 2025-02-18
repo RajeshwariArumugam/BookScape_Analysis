@@ -1,6 +1,5 @@
 # Full Implementation Code for BookScape Explorer
 
-# 1. Data Extraction (Google Books API)
 import requests
 import mysql.connector
 import json
@@ -10,13 +9,11 @@ import requests
 import pandas as pd
 import random
 
-# Google Books API configuration
 API_URL = "https://www.googleapis.com/books/v1/volumes"
 API_KEY = "API_KEY" #replace it with api key
 
-# Database configuration
 db_config = {
-    "host": "localhost",
+    "host": "localhost", 
     "user": "your_username",
     "password": "your_password",
     "database": "database_name"
@@ -62,7 +59,6 @@ def create_tables():
     cursor.close()
     connection.close()
 
-# Fetch data from Google Books API
 def fetch_books_data(search_term, max_results=1000):
     params = {
         "q": search_term,
@@ -86,11 +82,10 @@ def fetch_books_data(search_term, max_results=1000):
 
         books.extend(items)
         start_index += 40
-        sleep(1)  # Rate limiting
+        sleep(1)  
 
     return books
 
-# Insert data into the database
 def insert_books_data(books, search_key):
     connection = connect_database()
     cursor = connection.cursor()
@@ -139,7 +134,6 @@ def insert_books_data(books, search_key):
     cursor.close()
     connection.close()
 
-# Fetch books from database
 def fetch_books_from_db(query):
     try:
         connection = connect_database()
@@ -154,41 +148,32 @@ def fetch_books_from_db(query):
     except Exception as e:
         st.error(f"Unexpected error: {e}")
         return []
-
-# Main script
 if __name__ == "__main__":
     create_tables()
     search_keyword = "Book_World"
     books = fetch_books_data(search_keyword)
     insert_books_data(books, search_keyword)
 
-# 2. Streamlit Application
-# Streamlit setup
-# Function to load Lottie animations
+
+# Streamlit App Configuration
 def load_lottie_url(url: str):
     r = requests.get(url)
     if r.status_code != 200:
         return None
     return r.json()
 
-# Streamlit App Configuration
 st.set_page_config(page_title="BookScape Explorer", layout="wide")
 st.title("📚 BookScape Explorer")
-
-# Sidebar Menu
 st.sidebar.header("Navigate")
 menu = ["Home", "Explore!", "Need Help?"]
 choice = st.sidebar.radio("Choose a page:", menu)
 
-# Lottie Animation URL
 lottie_animation_url = "https://assets2.lottiefiles.com/packages/lf20_kkflmtur.json"  # Replace with any Lottie animation URL
 lottie_animation = load_lottie_url(lottie_animation_url)
 
 if choice == "Home":
-    # Home Page with Animation
     st.header("Welcome to BookScape Explorer! 🌟")
     st.subheader("Discover, Explore, and Analyze Books with Ease")
-    # Two-column layout for text and animation
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("""
@@ -227,10 +212,8 @@ elif choice == "Explore!":
     if search_publisher:
         query += f" AND publisher LIKE '%{search_publisher}%'"
 
-    # Fetching data from the database based on the constructed query
     books_df = pd.DataFrame(fetch_books_from_db(query))
 
-    # Display results
     if not books_df.empty:
         st.subheader("Search Results")
         st.dataframe(books_df)
