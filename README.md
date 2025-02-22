@@ -8,6 +8,30 @@ The BookScape Explorer project aims to facilitate users in discovering and analy
 - 🌟 Personalized recommendations.
 - 🎨 Beautiful and responsive UI.
 
+##Project Overview
+BookScape Explorer serves multiple user groups:
+
+        Avid readers seeking book recommendations
+        Researchers analyzing publishing trends
+        Book enthusiasts exploring literary data
+        Libraries and bookstores making inventory decisions
+
+##Key Features
+
+Advanced book search with multiple filters (genre, author, publication year)
+Trend analysis for genres and authors
+Comprehensive review and rating analytics
+Interactive data visualization dashboard
+Real-time SQL query execution through the UI
+
+Technical Setup
+Prerequisites
+## Required Python packages
+streamlit
+pandas
+sqlalchemy
+requests
+python-dotenv
 
 ## References
 - [Google Books API](https://developers.google.com/books) for data.
