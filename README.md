@@ -11,7 +11,7 @@ BookScape Explorer serves multiple user groups:
         Libraries and bookstores making inventory decisions
 
 
-# Features
+## Features
 - 🔍 Search and explore books by title, author, or genre.
 - 📊 Advanced analytics and visualizations.
 - 🌟 Personalized recommendations.
