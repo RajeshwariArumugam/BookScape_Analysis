@@ -18,8 +18,6 @@ BookScape Explorer serves multiple user groups:
 - 🎨 Beautiful and responsive UI.
 
 
-Technical Setup
-Prerequisites
 ## Required Python packages
                 streamlit
                 pandas
