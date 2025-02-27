@@ -18,14 +18,6 @@ BookScape Explorer serves multiple user groups:
 - 🎨 Beautiful and responsive UI.
 
 
-## Required Python packages
-                streamlit
-                pandas
-                sqlalchemy
-                requests
-                python-dotenv
-
-
 ## References
 - [Google Books API](https://developers.google.com/books) for data.
 - [Streamlit](https://streamlit.io/) for app development.
