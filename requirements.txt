@@ -1,1 +1,6 @@
-
+## Required Python packages
+                streamlit
+                pandas
+                sqlalchemy
+                requests
+                python-dotenv
